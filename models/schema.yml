@@ -1,0 +1,12 @@
+version: 2
+sources:
+  - name: raw
+    schema: gz_raw_data
+    tables:
+      - name: sales
+        identifier: '1'
+      - name: products
+        identifier: '2 products'
+      - name: shipping
+        identifier: '3 shipping'
+

@@ -27,8 +27,8 @@ sources:
           - name: purchase_price
             description: price of purchase
             tests: 
-              - unique:
-              - not_null:
+              - unique
+              - not_null
       - name: shipping
         identifier: '3 shipping'
         description: shipping model
@@ -42,7 +42,7 @@ sources:
           - name: ship_cost
             description: cost_of_shipping
             tests: 
-              - unique:
-              - not_null:
+              - unique
+              - not_null
               
 

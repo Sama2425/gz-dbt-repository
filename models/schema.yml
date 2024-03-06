@@ -2,11 +2,28 @@ version: 2
 sources:
   - name: raw
     schema: gz_raw_data
+    description: the raw data 
     tables:
       - name: sales
         identifier: '1'
+        description: sales model
       - name: products
         identifier: '2 products'
+        description: products' model
+        columns:
+          - name: products_id
+            description: the primary key of the products
+            tests: 
+              - unique:
+              - not_null:
       - name: shipping
         identifier: '3 shipping'
+        description: shipping model
+        columns:
+          - name: orders_id
+            description: the primary key of the shipping table
+            tests:
+              - unique:
+              - not_null:
+              
 

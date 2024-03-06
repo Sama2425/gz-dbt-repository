@@ -12,42 +12,44 @@ sources:
             description: purchase date
           - name: orders_id
             description: id of orders
-          - name: products_id
+            
+          - name: pdt_id
             description: id of products
           - name: revenue
             description: revelue of sales
           - name: quantity
             description: sales qauntity
-            tests:
-             - dbt_utils.unique_combination_of_columns:
-                combination_of_columns:
-                 - orders_id
-                 - products_id
+
+          - name : "(orders_id || pdt_id)"
+            tests: 
+              - unique
+               
       - name: products
         identifier: '2 products'
         description: products' model
         columns:
           - name: products_id
             description: the primary key of the products
-          - name: purchase_price
-            description: price of purchase
             tests: 
               - unique
               - not_null
+          - name: purchse_price
+            description: price of purchase
+           
       - name: shipping
         identifier: '3 shipping'
         description: shipping model
         columns:
           - name: orders_id
             description: the primary key of the shipping table
+            tests: 
+              - unique
+              - not_null
           - name: shipping_fee
             description: fee of shipping
           - name: logcost
             description: log_cost
           - name: ship_cost
             description: cost_of_shipping
-            tests: 
-              - unique
-              - not_null
-              
+            
 

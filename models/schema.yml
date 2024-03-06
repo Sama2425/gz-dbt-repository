@@ -18,6 +18,11 @@ sources:
             description: revelue of sales
           - name: quantity
             description: sales qauntity
+            tests:
+             - dbt_utils.unique_combination_of_columns:
+                combination_of_columns:
+                 - orders_id
+                 - products_id
       - name: products
         identifier: '2 products'
         description: products' model
